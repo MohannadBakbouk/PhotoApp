@@ -18,8 +18,14 @@ class MainCoordinator : Coordinator {
     }
     
     func start() {
-        let vc = PhotoListController()
-        pushViewControllerToStack(with: vc)
+        let splash = SplashController()
+        splash.coordinator = self
+        pushViewControllerToStack(with: splash)
+    }
+    
+    func showPhotos(){
+        let photos = PhotoListController()
+        pushViewControllerToStack(with: photos)
     }
     
     func back() {

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		039706F3283C326200207A37 /* PhotoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039706F2283C326200207A37 /* PhotoAppUITests.swift */; };
 		03970708283C354500207A37 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03970707283C354500207A37 /* Coordinator.swift */; };
 		0397070A283C354500207A37 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03970709283C354500207A37 /* MainCoordinator.swift */; };
+		0397070C283C354500207A37 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0397070B283C354500207A37 /* SplashController.swift */; };
+		03970710283C354500207A37 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0397070F283C354500207A37 /* UIView.swift */; };
 		2E5A5069F89A025E1E7AF8F2 /* Pods_PhotoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4863ABD5A6EA9CA5FDFD7B /* Pods_PhotoAppTests.framework */; };
 		3C1296FC8C37EBACE067310E /* Pods_PhotoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9E7A6883FD6C4FAEE098C3 /* Pods_PhotoApp.framework */; };
 		B4D10173460D5C589C14A9D2 /* Pods_PhotoApp_PhotoAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B960FF5A06A5AC165D94B3 /* Pods_PhotoApp_PhotoAppUITests.framework */; };
@@ -54,6 +56,8 @@
 		039706F4283C326200207A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03970707283C354500207A37 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		03970709283C354500207A37 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		0397070B283C354500207A37 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
+		0397070F283C354500207A37 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		07A41E40E2FC455D2E1CCD8D /* Pods-PhotoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoApp.release.xcconfig"; path = "Target Support Files/Pods-PhotoApp/Pods-PhotoApp.release.xcconfig"; sourceTree = "<group>"; };
 		0C3138AE398ACE3641750DB0 /* Pods-PhotoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoAppTests.release.xcconfig"; path = "Target Support Files/Pods-PhotoAppTests/Pods-PhotoAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		2E4863ABD5A6EA9CA5FDFD7B /* Pods_PhotoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,9 +176,10 @@
 		03970703283C332B00207A37 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				03970706283C354500207A37 /* Coordinator */,
 				039706D0283C326100207A37 /* AppDelegate.swift */,
 				039706D2283C326100207A37 /* SceneDelegate.swift */,
+				03970706283C354500207A37 /* Coordinator */,
+				0397070E283C354500207A37 /* Extensions */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -182,7 +187,7 @@
 		03970704283C33FD00207A37 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				039706DB283C326200207A37 /* LaunchScreen.storyboard */,
+				0397070D283C354500207A37 /* View */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -202,6 +207,23 @@
 				03970709283C354500207A37 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0397070D283C354500207A37 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				039706DB283C326200207A37 /* LaunchScreen.storyboard */,
+				0397070B283C354500207A37 /* SplashController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0397070E283C354500207A37 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0397070F283C354500207A37 /* UIView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D819C794DDB179174EC654CB /* Frameworks */ = {
@@ -224,7 +246,6 @@
 				92E045E0E505F240D400685E /* Pods-PhotoAppTests.debug.xcconfig */,
 				0C3138AE398ACE3641750DB0 /* Pods-PhotoAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -467,6 +488,8 @@
 			files = (
 				03970708283C354500207A37 /* Coordinator.swift in Sources */,
 				039706D5283C326100207A37 /* PhotoListController.swift in Sources */,
+				0397070C283C354500207A37 /* SplashController.swift in Sources */,
+				03970710283C354500207A37 /* UIView.swift in Sources */,
 				039706D1283C326100207A37 /* AppDelegate.swift in Sources */,
 				0397070A283C354500207A37 /* MainCoordinator.swift in Sources */,
 				039706D3283C326100207A37 /* SceneDelegate.swift in Sources */,
