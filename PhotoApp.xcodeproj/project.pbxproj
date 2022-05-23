@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		039706D1283C326100207A37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039706D0283C326100207A37 /* AppDelegate.swift */; };
 		039706D3283C326100207A37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039706D2283C326100207A37 /* SceneDelegate.swift */; };
-		039706D5283C326100207A37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039706D4283C326100207A37 /* ViewController.swift */; };
-		039706D8283C326100207A37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039706D6283C326100207A37 /* Main.storyboard */; };
+		039706D5283C326100207A37 /* PhotoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039706D4283C326100207A37 /* PhotoListController.swift */; };
 		039706DA283C326200207A37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 039706D9283C326200207A37 /* Assets.xcassets */; };
 		039706DD283C326200207A37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039706DB283C326200207A37 /* LaunchScreen.storyboard */; };
 		039706E8283C326200207A37 /* PhotoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039706E7283C326200207A37 /* PhotoAppTests.swift */; };
@@ -38,8 +37,7 @@
 		039706CD283C326100207A37 /* PhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		039706D0283C326100207A37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		039706D2283C326100207A37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		039706D4283C326100207A37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		039706D7283C326100207A37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		039706D4283C326100207A37 /* PhotoListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListController.swift; sourceTree = "<group>"; };
 		039706D9283C326200207A37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		039706DC283C326200207A37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		039706DE283C326200207A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,13 +97,9 @@
 		039706CF283C326100207A37 /* PhotoApp */ = {
 			isa = PBXGroup;
 			children = (
-				039706D0283C326100207A37 /* AppDelegate.swift */,
-				039706D2283C326100207A37 /* SceneDelegate.swift */,
-				039706D4283C326100207A37 /* ViewController.swift */,
-				039706D6283C326100207A37 /* Main.storyboard */,
-				039706D9283C326200207A37 /* Assets.xcassets */,
-				039706DB283C326200207A37 /* LaunchScreen.storyboard */,
-				039706DE283C326200207A37 /* Info.plist */,
+				03970701283C32CC00207A37 /* Screens */,
+				03970703283C332B00207A37 /* Utilities */,
+				03970702283C32FF00207A37 /* Resources */,
 			);
 			path = PhotoApp;
 			sourceTree = "<group>";
@@ -126,6 +120,57 @@
 				039706F4283C326200207A37 /* Info.plist */,
 			);
 			path = PhotoAppUITests;
+			sourceTree = "<group>";
+		};
+		03970700283C328600207A37 /* PhotoList */ = {
+			isa = PBXGroup;
+			children = (
+				03970705283C354500207A37 /* View */,
+			);
+			path = PhotoList;
+			sourceTree = "<group>";
+		};
+		03970701283C32CC00207A37 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				03970704283C33FD00207A37 /* Splash */,
+				03970700283C328600207A37 /* PhotoList */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		03970702283C32FF00207A37 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				039706D9283C326200207A37 /* Assets.xcassets */,
+				039706DE283C326200207A37 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		03970703283C332B00207A37 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				039706D0283C326100207A37 /* AppDelegate.swift */,
+				039706D2283C326100207A37 /* SceneDelegate.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		03970704283C33FD00207A37 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				039706DB283C326200207A37 /* LaunchScreen.storyboard */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		03970705283C354500207A37 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				039706D4283C326100207A37 /* PhotoListController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +278,6 @@
 			files = (
 				039706DD283C326200207A37 /* LaunchScreen.storyboard in Resources */,
 				039706DA283C326200207A37 /* Assets.xcassets in Resources */,
-				039706D8283C326100207A37 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				039706D5283C326100207A37 /* ViewController.swift in Sources */,
+				039706D5283C326100207A37 /* PhotoListController.swift in Sources */,
 				039706D1283C326100207A37 /* AppDelegate.swift in Sources */,
 				039706D3283C326100207A37 /* SceneDelegate.swift in Sources */,
 			);
@@ -296,14 +340,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		039706D6283C326100207A37 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				039706D7283C326100207A37 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		039706DB283C326200207A37 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -437,7 +473,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PhotoApp/Info.plist;
+				INFOPLIST_FILE = PhotoApp/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,7 +491,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PhotoApp/Info.plist;
+				INFOPLIST_FILE = PhotoApp/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
