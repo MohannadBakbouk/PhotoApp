@@ -90,4 +90,6 @@ iOSInjectionProject/
 .Trashes
 ehthumbs.db
 Thumbs.db
-NewsApp.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+PhotoApp.xcworkspace/xcshareddata/*
+PhotoApp.xcodeproj/xcuserdata/*
+PhotoApp.xcodeproj/xcuserdata/mohannad.xcuserdatad/*
