@@ -25,14 +25,17 @@ class MainCoordinator : Coordinator {
     
     func showPhotos(){
         let photos = PhotoListController()
-        pushViewControllerToStack(with: photos)
+        pushViewControllerToStack(with: photos , isRoot: true)
     }
     
     func back() {
         navigationController.popViewController(animated: true)
     }
     
-    func pushViewControllerToStack(with value : UIViewController , animated : Bool = true ){
+    func pushViewControllerToStack(with value : UIViewController , animated : Bool = true , isRoot : Bool = false){
+        if isRoot {
+            navigationController.viewControllers = []
+        }
         navigationController.pushViewController(value, animated: animated)
     }
     
