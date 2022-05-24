@@ -50,7 +50,6 @@ class SplashController: UIViewController {
         slugLabel.snp.makeConstraints { maker in
             maker.centerX.equalTo(view.snp.centerX)
             maker.centerY.equalTo(view.snp.centerY).offset(-50)
-
         }
         
         inidicatorView.snp.makeConstraints { maker in
@@ -65,6 +64,4 @@ class SplashController: UIViewController {
             self.coordinator?.showPhotos()
         }
     }
-    
-
 }
