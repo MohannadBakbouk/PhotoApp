@@ -7,6 +7,7 @@
 import RxSwift
 
 class PhotoListViewModel : PhotoListViewModelProtocol {
+    var api: PhotoServiceProtocol
     
     var input: PhotoListViewModelInput {return self}
     
@@ -24,14 +25,17 @@ class PhotoListViewModel : PhotoListViewModelProtocol {
     
     var rawPhotos: PublishSubject<SearchPhotoResponse>
     
-    init() {
+    
+    init(apiService : PhotoServiceProtocol = PhotoService()) {
         photos = BehaviorSubject(value: [])
         rawPhotos = PublishSubject()
         isLoading = BehaviorSubject(value: false)
         isLoadingMore = BehaviorSubject(value: false)
         reachedBottomTrigger = PublishSubject()
         onError = PublishSubject()
+        api = apiService
         configuringReachedBottomTrigger()
+        
     }
     
     func loadPhotos() {

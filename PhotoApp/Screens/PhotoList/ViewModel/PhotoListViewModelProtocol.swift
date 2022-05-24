@@ -31,6 +31,8 @@ protocol PhotoListViewModelInternal {
 protocol PhotoListViewModelProtocol : PhotoListViewModelEvents {
     var input : PhotoListViewModelInput {get}
     var output : PhotoListViewModelOutput {get}
+    var api : PhotoServiceProtocol {get}
     func loadPhotos()
     func configuringReachedBottomTrigger()
+    
 }
