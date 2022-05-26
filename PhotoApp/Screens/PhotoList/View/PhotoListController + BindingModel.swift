@@ -9,20 +9,38 @@ import RxCocoa
 
 extension PhotoListController {
     
-    func bindingCollectionViewDataSource(){
+    func bindingTableViewDataSource(){
         viewModel.output.photos
         .bind(to: tableview.rx.items){ (table , row , model) in
             let indexPath = IndexPath(row: row, section: 0)
             switch model {
-                case .Photo(let info):
+                case .photo(let info):
                        let cell = table.dequeueReusableCell(withIdentifier: String(describing: PhotoCell.self), for: indexPath) as! PhotoCell
                        cell.configure(info: info)
                        return cell
-                case .Banner(let info):
+                case .banner(let info):
                     let cell = table.dequeueReusableCell(withIdentifier: String(describing: BannerCell.self), for: indexPath) as! BannerCell
                     cell.configure(info: info)
                     return cell
+                case .indicator:
+                    let cell = table.dequeueReusableCell(withIdentifier: String(describing: IndicatorCell.self), for: indexPath) as! IndicatorCell
+                    cell.startAnimaing()
+                    return cell
             }
         }.disposed(by: disposeBag)
+    }
+    
+    func bindingTableViewScrollingEvent(){
+        tableview.rx.reachedBottom
+        .bind(to: viewModel.input.reachedBottomTrigger)
+        .disposed(by: disposeBag)
+    }
+    
+    func bindingTableViewLoadingIndicator(){
+        tableview.setupLoadingIndicator()
+        guard let indicator = tableview.backgroundView as? UIActivityIndicatorView else { return}
+        viewModel.output.isLoading
+        .bind(to: indicator.rx.isAnimating)
+        .disposed(by: disposeBag)
     }
 }

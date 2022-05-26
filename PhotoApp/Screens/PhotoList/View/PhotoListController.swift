@@ -44,12 +44,15 @@ class PhotoListController: SuperViewController {
     }
     
     func bindingUIToModel(){
-        bindingCollectionViewDataSource()
+        bindingTableViewDataSource()
+        bindingTableViewLoadingIndicator()
+        bindingTableViewScrollingEvent()
     }
     
     func setupTableview(){
         tableview.register(PhotoCell.self, forCellReuseIdentifier: String(describing: PhotoCell.self))
         tableview.register(BannerCell.self, forCellReuseIdentifier: String(describing: BannerCell.self))
+        tableview.register(IndicatorCell.self, forCellReuseIdentifier: String(describing: IndicatorCell.self))
         view.addSubview(tableview)
         setupTableviewConstraints()
     }

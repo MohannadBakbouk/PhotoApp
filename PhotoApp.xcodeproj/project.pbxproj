@@ -16,6 +16,9 @@
 		0355749C2840164400C0512E /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355749B2840164400C0512E /* Int.swift */; };
 		0355749F284016EC00C0512E /* BannerViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355749E284016EC00C0512E /* BannerViewData.swift */; };
 		035574A1284016EC00C0512E /* SuperPhotoViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035574A0284016EC00C0512E /* SuperPhotoViewData.swift */; };
+		0357314628403A94005CA337 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357314528403A94005CA337 /* UITableView.swift */; };
+		0357314828403C21005CA337 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357314728403C21005CA337 /* Reactive.swift */; };
+		0357314C284040DF005CA337 /* IndicatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357314B284040DF005CA337 /* IndicatorCell.swift */; };
 		03827886283D4334008B4781 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03827885283D4334008B4781 /* PhotoService.swift */; };
 		03827889283D43F6008B4781 /* SearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03827888283D43F6008B4781 /* SearchParams.swift */; };
 		0382788E283D4917008B4781 /* SearchPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0382788D283D4917008B4781 /* SearchPhotoResponse.swift */; };
@@ -71,6 +74,9 @@
 		0355749B2840164400C0512E /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		0355749E284016EC00C0512E /* BannerViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewData.swift; sourceTree = "<group>"; };
 		035574A0284016EC00C0512E /* SuperPhotoViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPhotoViewData.swift; sourceTree = "<group>"; };
+		0357314528403A94005CA337 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		0357314728403C21005CA337 /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
+		0357314B284040DF005CA337 /* IndicatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorCell.swift; sourceTree = "<group>"; };
 		03827885283D4334008B4781 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		03827888283D43F6008B4781 /* SearchParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParams.swift; sourceTree = "<group>"; };
 		0382788D283D4917008B4781 /* SearchPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoResponse.swift; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 			children = (
 				0349E46A283D8499007131A8 /* PhotoCell.swift */,
 				03FE77C0283EF3640072EDDB /* BannerCell.swift */,
+				0357314B284040DF005CA337 /* IndicatorCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -344,6 +351,8 @@
 				03FE77BC283EC6360072EDDB /* UIImageView.swift */,
 				03FE77BE283EC6E10072EDDB /* UIColor.swift */,
 				0355749B2840164400C0512E /* Int.swift */,
+				0357314528403A94005CA337 /* UITableView.swift */,
+				0357314728403C21005CA337 /* Reactive.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -635,6 +644,7 @@
 				0349E474283D9711007131A8 /* PhotoListViewModelProtocol.swift in Sources */,
 				0355749F284016EC00C0512E /* BannerViewData.swift in Sources */,
 				039706D5283C326100207A37 /* PhotoListController.swift in Sources */,
+				0357314C284040DF005CA337 /* IndicatorCell.swift in Sources */,
 				03FE77BB283EC26E0072EDDB /* PhotoListController + BindingModel.swift in Sources */,
 				03FE77BD283EC6360072EDDB /* UIImageView.swift in Sources */,
 				03827889283D43F6008B4781 /* SearchParams.swift in Sources */,
@@ -651,7 +661,9 @@
 				03827890283D49B2008B4781 /* Photo.swift in Sources */,
 				03827886283D4334008B4781 /* PhotoService.swift in Sources */,
 				0397071A283C396B00207A37 /* Constant.swift in Sources */,
+				0357314628403A94005CA337 /* UITableView.swift in Sources */,
 				039706D3283C326100207A37 /* SceneDelegate.swift in Sources */,
+				0357314828403C21005CA337 /* Reactive.swift in Sources */,
 				0349E472283D96EB007131A8 /* PhotoListViewModel.swift in Sources */,
 				03FE77C1283EF3640072EDDB /* BannerCell.swift in Sources */,
 				03970714283C354500207A37 /* ApiBaseProtocol.swift in Sources */,

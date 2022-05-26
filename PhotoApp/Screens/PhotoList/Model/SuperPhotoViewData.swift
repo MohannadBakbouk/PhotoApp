@@ -7,6 +7,7 @@
 import Foundation
 
 enum SuperPhotoViewData {
-    case Photo(PhotoViewData)
-    case Banner(BannerViewData)
+    case photo(PhotoViewData)
+    case banner(BannerViewData)
+    case indicator
 }

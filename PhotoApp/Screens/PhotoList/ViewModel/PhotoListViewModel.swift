@@ -32,6 +32,8 @@ class PhotoListViewModel : PhotoListViewModelProtocol {
     
     let bannerAmount : Int
     
+    var totalPages : Int
+    
     init(apiService : PhotoServiceProtocol = PhotoService()) {
         photos = BehaviorSubject(value: [])
         rawPhotos = PublishSubject()
@@ -40,10 +42,12 @@ class PhotoListViewModel : PhotoListViewModelProtocol {
         reachedBottomTrigger = PublishSubject()
         onError = PublishSubject()
         api = apiService
-        searchParams = SearchParams(page: 1, size: 17)
+        searchParams = SearchParams(page: 1, size: 20)
         bannerAmount = 5
+        totalPages = -1
         configuringReachedBottomTrigger()
         subcribingToRawPhotos()
+        subscribingToisLoadingMore()
     }
     
     func loadPhotos() {
@@ -53,17 +57,16 @@ class PhotoListViewModel : PhotoListViewModelProtocol {
         .disposed(by: disposeBag)
     }
     
-    func configuringReachedBottomTrigger() {
-        
-    }
-    
     func subcribingToRawPhotos(){
         rawPhotos.subscribe{[weak self]  event in
             guard let self = self else { return }
             if let photos = event.element?.photos , var items =  try? self.photos.value(){
                 let batch  = photos.photo.map{PhotoViewData (info: $0)}
+                self.totalPages = photos.pages
+                _ = self.searchParams.page > 1 ?  items.removeLast() : nil // remove indicator model from the table
                 items.append(contentsOf: self.combinePhotosWithBannars(data: batch))
                 self.photos.onNext(items)
+                self.isLoadingMore.onNext(false)
             }
             else { // there is an error try to load from local db
                 
@@ -80,16 +83,40 @@ class PhotoListViewModel : PhotoListViewModelProtocol {
         while leftCount != 0 {
             let bound = leftCount  > bannerAmount ? bannerAmount + position  :  leftCount + position
             let currentBatch = Array(batch[position...bound - 1])
-            let castedBatch : [SuperPhotoViewData]  = currentBatch.map{.Photo($0)}
+            let castedBatch : [SuperPhotoViewData]  = currentBatch.map{.photo($0)}
             result.append(contentsOf: castedBatch)
             if adsCount > 0 {
-                result.append(.Banner(BannerViewData()))
+                result.append(.banner(BannerViewData()))
                 adsCount -= 1
             }
             position += bannerAmount
             leftCount -= castedBatch.count
         }
-        
         return result
+    }
+    
+    func configuringReachedBottomTrigger() {
+        reachedBottomTrigger.filter{[weak self] in
+            guard let self = self else { return false}
+            return self.searchParams.page < self.totalPages
+        }
+        .withLatestFrom(isLoadingMore)
+        .filter{$0 == false}
+        .subscribe(onNext: {[weak self]  event in
+            guard let self = self else { return}
+            self.searchParams.page += 1
+            self.isLoadingMore.onNext(true)
+            self.loadPhotos()
+        }).disposed(by: disposeBag)
+    }
+    
+    func subscribingToisLoadingMore()  {
+        isLoadingMore.subscribe(onNext :{ [weak self]  newValue in
+            guard let self = self else { return}
+            if newValue ,   var items = try? self.photos.value() {
+                items.append(.indicator)
+                self.photos.onNext(items)
+            }
+        }).disposed(by: disposeBag)
     }
 }
