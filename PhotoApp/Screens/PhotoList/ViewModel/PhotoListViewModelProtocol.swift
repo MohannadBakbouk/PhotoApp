@@ -14,7 +14,7 @@ protocol PhotoListViewModelInput {
 }
 
 protocol PhotoListViewModelOutput {
-    var photos : BehaviorSubject<[PhotoViewData]>{get}
+    var photos : BehaviorSubject<[SuperPhotoViewData]>{get}
     
     var isLoading : BehaviorSubject<Bool> {get}
     
