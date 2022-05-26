@@ -18,3 +18,8 @@ enum Icons : String {
     case checkmark = "checkmark.circle.fill"
     case xmark = "xmark.circle.fill"
 }
+enum Colors : String {
+    case flatGreen = "#27ae60"
+    case flatRed = "#e74c3c"
+    case flatdark = "#34495e"
+}
