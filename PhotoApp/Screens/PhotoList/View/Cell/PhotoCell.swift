@@ -14,7 +14,7 @@ class PhotoCell: UITableViewCell {
         let img = UIImageView()
         img.contentMode = .scaleAspectFill
         img.kf.indicatorType = .activity
-        img.backgroundColor = .darkGray
+        img.backgroundColor = .lightGray
         img.layer.cornerRadius = 15
         img.layer.masksToBounds = true
         return img
@@ -39,7 +39,6 @@ class PhotoCell: UITableViewCell {
     
     var friendImageView : UIImageView = {
         let img = UIImageView()
-        img.backgroundColor = .red
         return img
     }()
     
@@ -171,5 +170,16 @@ class PhotoCell: UITableViewCell {
         familyImageView.snp.makeConstraints { maker in
             maker.size.equalTo(20)
         }
+    }
+    
+    func configure(info : PhotoViewData){
+        titleLabel.text = info.title
+        friendImageView.setup(meta: info.freindMeta)
+        publicImageView.setup(meta: info.PublicMeta)
+        familyImageView.setup(meta: info.familyMeta)
+        guard let url = URL(string: info.urlString) else {return}
+        photoImageView.kf.setImage(with: url)
+        
+
     }
 }
