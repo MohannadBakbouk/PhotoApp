@@ -25,7 +25,12 @@ class MainCoordinator : Coordinator {
     
     func showPhotos(){
         let photos = PhotoListController()
+        photos.coordinator = self
         pushViewControllerToStack(with: photos , isRoot: true)
+    }
+    
+    func showPhotoDetails(info : PhotoViewData){
+        print("PhotoDetails")
     }
     
     func back() {

@@ -4,12 +4,14 @@
 //
 //  Created by Mohannad on 5/23/22.
 //
-
 import UIKit
 import SnapKit
+import CoreData
 
 class PhotoListController: SuperViewController {
 
+    var viewModel : PhotoListViewModelProtocol!
+    
     var tableview : UITableView = {
         let table = UITableView()
         table.backgroundColor = .white
@@ -20,17 +22,12 @@ class PhotoListController: SuperViewController {
         return table
     }()
     
-    var viewModel : PhotoListViewModelProtocol!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = PhotoListViewModel()
+        viewModel = PhotoListViewModel(persistent: CoreDataManager(modelName: "Photos"))
         setupUI()
         bindingUIToModel()
         viewModel.loadPhotos()
-        let x = "855de8e6a9"
-        print(URL(string: "farm66.static.flickr.com/\(65535)/\(50397567507)_\(x).jpg")!)
-       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,8 +42,10 @@ class PhotoListController: SuperViewController {
     
     func bindingUIToModel(){
         bindingTableViewDataSource()
+        bindingSelectTableViewItem()
         bindingTableViewLoadingIndicator()
         bindingTableViewScrollingEvent()
+        bindingToError()
     }
     
     func setupTableview(){

@@ -36,6 +36,14 @@ extension PhotoListController {
         .disposed(by: disposeBag)
     }
     
+    func bindingSelectTableViewItem(){
+           tableview.rx.modelSelected(SuperPhotoViewData.self)
+           .subscribe(onNext : {[weak self] model in
+               guard let self = self , case .photo(let info) = model else {return}
+               self.coordinator?.showPhotoDetails(info: info)
+           }).disposed(by: disposeBag)
+    }
+    
     func bindingTableViewLoadingIndicator(){
         tableview.setupLoadingIndicator()
         guard let indicator = tableview.backgroundView as? UIActivityIndicatorView else { return}
