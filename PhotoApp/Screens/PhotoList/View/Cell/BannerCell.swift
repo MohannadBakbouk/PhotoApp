@@ -10,7 +10,7 @@ import SnapKit
 
 class BannerCell: UITableViewCell {
     
-    var messageLabel : UILabel = {
+  private var messageLabel : UILabel = {
         let lab = UILabel()
         lab.text = "mesgaeLabel"
         lab.font = UIFont.boldSystemFont(ofSize: 22)
@@ -34,8 +34,6 @@ class BannerCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -43,7 +41,7 @@ class BannerCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupUI(){
+    private func setupUI(){
         contentView.addSubview(messageLabel)
         messageLabel.snp.makeConstraints { maker in
             maker.top.leading.equalTo(contentView).offset(5)
@@ -55,7 +53,4 @@ class BannerCell: UITableViewCell {
     func configure(info : BannerViewData){
         messageLabel.text = "\(info.space)\n \(info.message)"
     }
-    
-     
-
 }

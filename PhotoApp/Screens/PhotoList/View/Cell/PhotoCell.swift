@@ -10,7 +10,7 @@ import SnapKit
 
 class PhotoCell: UITableViewCell {
     
-    var photoImageView : UIImageView = {
+   private var photoImageView : UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFill
         img.kf.indicatorType = .activity
@@ -20,7 +20,7 @@ class PhotoCell: UITableViewCell {
         return img
     }()
     
-    var titleLabel : UILabel = {
+    private var titleLabel : UILabel = {
         let lab = UILabel()
         lab.text = ""
         lab.font = UIFont.boldSystemFont(ofSize: 16)
@@ -29,7 +29,7 @@ class PhotoCell: UITableViewCell {
         return lab
     }()
     
-    var friendLabel : UILabel = {
+    private var friendLabel : UILabel = {
         let lab = UILabel()
         lab.text = "Friend"
         lab.font = UIFont.boldSystemFont(ofSize: 14)
@@ -37,12 +37,12 @@ class PhotoCell: UITableViewCell {
         return lab
     }()
     
-    var friendImageView : UIImageView = {
+    private var friendImageView : UIImageView = {
         let img = UIImageView()
         return img
     }()
     
-    lazy var friendStack : UIStackView =  {
+    private lazy var friendStack : UIStackView =  {
        let stack = UIStackView(arrangedSubviews: [friendLabel , friendImageView])
        stack.axis = .horizontal
        stack.spacing = 10
@@ -50,7 +50,7 @@ class PhotoCell: UITableViewCell {
        return stack
     }()
     
-    var publicLabel : UILabel = {
+    private var publicLabel : UILabel = {
         let lab = UILabel()
         lab.text = "Public"
         lab.font = UIFont.boldSystemFont(ofSize: 14)
@@ -58,13 +58,13 @@ class PhotoCell: UITableViewCell {
         return lab
     }()
     
-    var publicImageView : UIImageView = {
+    private var publicImageView : UIImageView = {
         let img = UIImageView(image: UIImage(systemName: Icons.xmark.rawValue))
         img.tintColor = .blue
         return img
     }()
     
-    lazy var publicStack : UIStackView =  {
+    private lazy var publicStack : UIStackView =  {
        let stack = UIStackView(arrangedSubviews: [publicLabel , publicImageView])
        stack.axis = .horizontal
        stack.spacing = 10
@@ -72,7 +72,7 @@ class PhotoCell: UITableViewCell {
        return stack
     }()
     
-    var familyLabel : UILabel = {
+    private var familyLabel : UILabel = {
         let lab = UILabel()
         lab.text = "Family"
         lab.font = UIFont.boldSystemFont(ofSize: 14)
@@ -80,13 +80,13 @@ class PhotoCell: UITableViewCell {
         return lab
     }()
     
-    var familyImageView : UIImageView = {
+    private var familyImageView : UIImageView = {
         let img = UIImageView(image: UIImage(systemName: Icons.checkmark.rawValue))
         img.tintColor = .green
         return img
     }()
     
-    lazy var familyStack : UIStackView =  {
+    private lazy var familyStack : UIStackView =  {
        let stack = UIStackView(arrangedSubviews: [familyLabel , familyImageView])
        stack.axis = .horizontal
        stack.spacing = 10
@@ -94,7 +94,7 @@ class PhotoCell: UITableViewCell {
        return stack
     }()
     
-    lazy var leftContentStack : UIStackView =  {
+    private lazy var leftContentStack : UIStackView =  {
        let stack = UIStackView(arrangedSubviews: [titleLabel , friendStack  , publicStack , familyStack])
        stack.axis = .vertical
        stack.spacing = 10
@@ -102,7 +102,7 @@ class PhotoCell: UITableViewCell {
        return stack
     }()
     
-    lazy var mainStack : UIStackView =  {
+    private lazy var mainStack : UIStackView =  {
        let stack = UIStackView(arrangedSubviews: [photoImageView ,leftContentStack])
        stack.axis = .horizontal
        stack.spacing = 10
@@ -111,7 +111,7 @@ class PhotoCell: UITableViewCell {
        return stack
     }()
     
-    var container : UIView = {
+    private var container : UIView = {
         let view = UIView()
         view.layer.borderWidth = 0.2
         view.layer.borderColor = UIColor.gray.cgColor
@@ -137,14 +137,14 @@ class PhotoCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setupUI(){
+    private func setupUI(){
         selectionStyle = .none
         addSubview(container)
         container.addSubview(mainStack)
         setupUIConstraints()
     }
     
-    func setupUIConstraints(){
+    private func setupUIConstraints(){
         container.snp.makeConstraints { maker in
             maker.top.leading.equalTo(self).offset(5)
             maker.trailing.bottom.equalTo(self).offset(-5)
@@ -179,7 +179,5 @@ class PhotoCell: UITableViewCell {
         familyImageView.setup(meta: info.familyMeta)
         guard let url = URL(string: info.urlString) else {return}
         photoImageView.kf.setImage(with: url)
-        
-
     }
 }

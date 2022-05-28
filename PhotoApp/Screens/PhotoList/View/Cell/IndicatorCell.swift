@@ -10,7 +10,7 @@ import SnapKit
 
 class IndicatorCell: UITableViewCell {
     
-    var indicator :  UIActivityIndicatorView = {
+   private var indicator :  UIActivityIndicatorView = {
         let item = UIActivityIndicatorView()
         item.color = .red
         item.style = .medium
@@ -36,7 +36,7 @@ class IndicatorCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupUI(){
+    private func setupUI(){
         addSubview(indicator)
         indicator.snp.makeConstraints { maker in
             maker.size.equalTo(10)
