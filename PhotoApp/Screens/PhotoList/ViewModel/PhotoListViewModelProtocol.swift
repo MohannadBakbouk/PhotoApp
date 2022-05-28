@@ -34,5 +34,4 @@ protocol PhotoListViewModelProtocol : PhotoListViewModelEvents {
     var localPersistent : CoreDataManagerProtocol {get}
     func loadPhotos()
     func configuringReachedBottomTrigger()
-    
 }

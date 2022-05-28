@@ -89,10 +89,6 @@ extension PhotoListViewModel {
     func subcribingToRawPhotos(){
         rawPhotos.subscribe{[weak self]  event in
             guard let self = self else { return }
-            
-            self.loadCachedPhotosWith.onNext(.server)
-            return
-            
             if let photos = event.element?.photos , var items =  try? self.photos.value(){
                 let batch  = photos.photo.map{PhotoViewData (info: $0)}
                 self.totalPages = photos.pages
