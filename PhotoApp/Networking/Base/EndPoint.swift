@@ -14,6 +14,7 @@ enum ApiError : Error {
     case parse
     case invalidUrl
     case internetOffline
+    case errorOccured
     
     var message : String {
         switch self {
@@ -21,6 +22,8 @@ enum ApiError : Error {
             return "Please make sure you are connected to the internet"
         case .server :
             return "an internal error occured in server side please try again later"
+        case .errorOccured :
+            return "Something went wrong"
         default:
             return "an internal error occured"
         }

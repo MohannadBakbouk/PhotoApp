@@ -15,16 +15,15 @@ protocol PhotoListViewModelInput {
 
 protocol PhotoListViewModelOutput {
     var photos : BehaviorSubject<[SuperPhotoViewData]>{get}
-    
     var isLoading : BehaviorSubject<Bool> {get}
-    
-    var isLoadingMore : BehaviorSubject<Bool> {get}
-    
     var onError : PublishSubject<String> {get}
 }
 
 protocol PhotoListViewModelInternal {
     var rawPhotos : PublishSubject<SearchPhotoResponse> {get}
+    var cachingPhotosLocallyTrigger : PublishSubject<[SuperPhotoViewData]> {get}
+    var loadCachedPhotosWith :  PublishSubject<ApiError> {get}
+    var isLoadingMore : BehaviorSubject<Bool> {get}
 }
 
 
@@ -32,6 +31,7 @@ protocol PhotoListViewModelProtocol : PhotoListViewModelEvents {
     var input : PhotoListViewModelInput {get}
     var output : PhotoListViewModelOutput {get}
     var api : PhotoServiceProtocol {get}
+    var localPersistent : CoreDataManagerProtocol {get}
     func loadPhotos()
     func configuringReachedBottomTrigger()
     

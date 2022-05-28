@@ -19,6 +19,8 @@
 		0357314628403A94005CA337 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357314528403A94005CA337 /* UITableView.swift */; };
 		0357314828403C21005CA337 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357314728403C21005CA337 /* Reactive.swift */; };
 		0357314C284040DF005CA337 /* IndicatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357314B284040DF005CA337 /* IndicatorCell.swift */; };
+		036925D228415D730098E949 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036925D128415D730098E949 /* CoreDataManager.swift */; };
+		036925D5284176900098E949 /* Photos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 036925D3284176900098E949 /* Photos.xcdatamodeld */; };
 		03827886283D4334008B4781 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03827885283D4334008B4781 /* PhotoService.swift */; };
 		03827889283D43F6008B4781 /* SearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03827888283D43F6008B4781 /* SearchParams.swift */; };
 		0382788E283D4917008B4781 /* SearchPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0382788D283D4917008B4781 /* SearchPhotoResponse.swift */; };
@@ -38,6 +40,9 @@
 		03970716283C354500207A37 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03970715283C354500207A37 /* EndPoint.swift */; };
 		03970718283C383D00207A37 /* ApiBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03970717283C383D00207A37 /* ApiBase.swift */; };
 		0397071A283C396B00207A37 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03970719283C396B00207A37 /* Constant.swift */; };
+		0399543528426037008C1B3C /* CoreDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0399543428426037008C1B3C /* CoreDataManagerProtocol.swift */; };
+		03995438284262DF008C1B3C /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03995437284262DF008C1B3C /* NSManagedObject.swift */; };
+		0399543A28426301008C1B3C /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0399543928426301008C1B3C /* Picture.swift */; };
 		03FE77BB283EC26E0072EDDB /* PhotoListController + BindingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FE77BA283EC26E0072EDDB /* PhotoListController + BindingModel.swift */; };
 		03FE77BD283EC6360072EDDB /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FE77BC283EC6360072EDDB /* UIImageView.swift */; };
 		03FE77BF283EC6E10072EDDB /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FE77BE283EC6E10072EDDB /* UIColor.swift */; };
@@ -77,6 +82,8 @@
 		0357314528403A94005CA337 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		0357314728403C21005CA337 /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
 		0357314B284040DF005CA337 /* IndicatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorCell.swift; sourceTree = "<group>"; };
+		036925D128415D730098E949 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		036925D4284176900098E949 /* Photos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Photos.xcdatamodel; sourceTree = "<group>"; };
 		03827885283D4334008B4781 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		03827888283D43F6008B4781 /* SearchParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParams.swift; sourceTree = "<group>"; };
 		0382788D283D4917008B4781 /* SearchPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoResponse.swift; sourceTree = "<group>"; };
@@ -102,6 +109,9 @@
 		03970715283C354500207A37 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		03970717283C383D00207A37 /* ApiBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiBase.swift; sourceTree = "<group>"; };
 		03970719283C396B00207A37 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		0399543428426037008C1B3C /* CoreDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerProtocol.swift; sourceTree = "<group>"; };
+		03995437284262DF008C1B3C /* NSManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
+		0399543928426301008C1B3C /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		03FE77BA283EC26E0072EDDB /* PhotoListController + BindingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoListController + BindingModel.swift"; sourceTree = "<group>"; };
 		03FE77BC283EC6360072EDDB /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		03FE77BE283EC6E10072EDDB /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -158,8 +168,8 @@
 		0349E46F283D96C3007131A8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0349E473283D9711007131A8 /* PhotoListViewModelProtocol.swift */,
 				0349E471283D96EB007131A8 /* PhotoListViewModel.swift */,
+				0349E473283D9711007131A8 /* PhotoListViewModelProtocol.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -172,6 +182,17 @@
 				035574A0284016EC00C0512E /* SuperPhotoViewData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		036925D028415D250098E949 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				03995436284262CB008C1B3C /* Model */,
+				0399543428426037008C1B3C /* CoreDataManagerProtocol.swift */,
+				036925D128415D730098E949 /* CoreDataManager.swift */,
+				036925D3284176900098E949 /* Photos.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		03827884283D42FF008B4781 /* Service */ = {
@@ -243,6 +264,7 @@
 			children = (
 				03970701283C32CC00207A37 /* Screens */,
 				03970711283C354500207A37 /* Networking */,
+				036925D028415D250098E949 /* CoreData */,
 				03970703283C332B00207A37 /* Utilities */,
 				03970702283C32FF00207A37 /* Resources */,
 			);
@@ -376,6 +398,15 @@
 				0349E468283D7DA3007131A8 /* RequestInfo.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		03995436284262CB008C1B3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				03995437284262DF008C1B3C /* NSManagedObject.swift */,
+				0399543928426301008C1B3C /* Picture.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D819C794DDB179174EC654CB /* Frameworks */ = {
@@ -642,6 +673,7 @@
 				0355749C2840164400C0512E /* Int.swift in Sources */,
 				0349E469283D7DA3007131A8 /* RequestInfo.swift in Sources */,
 				0349E474283D9711007131A8 /* PhotoListViewModelProtocol.swift in Sources */,
+				0399543A28426301008C1B3C /* Picture.swift in Sources */,
 				0355749F284016EC00C0512E /* BannerViewData.swift in Sources */,
 				039706D5283C326100207A37 /* PhotoListController.swift in Sources */,
 				0357314C284040DF005CA337 /* IndicatorCell.swift in Sources */,
@@ -652,9 +684,13 @@
 				0349E46B283D8499007131A8 /* PhotoCell.swift in Sources */,
 				03970718283C383D00207A37 /* ApiBase.swift in Sources */,
 				03970716283C354500207A37 /* EndPoint.swift in Sources */,
+				036925D228415D730098E949 /* CoreDataManager.swift in Sources */,
 				03970710283C354500207A37 /* UIView.swift in Sources */,
 				035574A1284016EC00C0512E /* SuperPhotoViewData.swift in Sources */,
+				03995438284262DF008C1B3C /* NSManagedObject.swift in Sources */,
 				039706D1283C326100207A37 /* AppDelegate.swift in Sources */,
+				0399543528426037008C1B3C /* CoreDataManagerProtocol.swift in Sources */,
+				036925D5284176900098E949 /* Photos.xcdatamodeld in Sources */,
 				03FE77BF283EC6E10072EDDB /* UIColor.swift in Sources */,
 				0349E46E283D9327007131A8 /* SuperViewController.swift in Sources */,
 				0397070A283C354500207A37 /* MainCoordinator.swift in Sources */,
@@ -993,6 +1029,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		036925D3284176900098E949 /* Photos.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				036925D4284176900098E949 /* Photos.xcdatamodel */,
+			);
+			currentVersion = 036925D4284176900098E949 /* Photos.xcdatamodel */;
+			path = Photos.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 039706C5283C326100207A37 /* Project object */;
 }
