@@ -43,4 +43,13 @@ extension PhotoListController {
         .bind(to: indicator.rx.isAnimating)
         .disposed(by: disposeBag)
     }
+    
+    func bindingToError(){
+        viewModel.output.onError
+        .observe(on: MainScheduler.asyncInstance)
+        .subscribe(onNext : {[weak self] message in
+            guard let self = self else {return}
+            self.tableview.setMessage(message)
+        }).disposed(by: disposeBag)
+    }
 }

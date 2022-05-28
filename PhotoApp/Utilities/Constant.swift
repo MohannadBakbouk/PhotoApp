@@ -17,6 +17,7 @@ enum Api : String {
 enum Icons : String {
     case checkmark = "checkmark.circle.fill"
     case xmark = "xmark.circle.fill"
+    case wifiProblem = "exclamationmark.icloud.fill"
 }
 enum Colors : String {
     case flatGreen = "#27ae60"
