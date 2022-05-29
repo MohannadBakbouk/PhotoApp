@@ -31,11 +31,19 @@ class MainCoordinator : Coordinator {
     }
     
     func showPhotoDetails(info : PhotoViewData){
-        print("PhotoDetails")
+        let photoDetails = PhotoDetailsController()
+        photoDetails.coordinator = self
+        photoDetails.modalTransitionStyle = .crossDissolve
+        photoDetails.modalPresentationStyle = .fullScreen
+        presentViewControllerToStack(with: photoDetails)
     }
     
     func back() {
         navigationController.popViewController(animated: true)
+    }
+    
+    func dismiss() {
+        navigationController.dismiss(animated: true, completion: nil) 
     }
     
     func pushViewControllerToStack(with value : UIViewController , animated : Bool = true , isRoot : Bool = false){

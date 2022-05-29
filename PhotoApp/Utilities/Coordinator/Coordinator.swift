@@ -15,4 +15,6 @@ protocol Coordinator {
     func start()
     
     func back()
+    
+    func dismiss()
 }
