@@ -8,7 +8,7 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class PhotoDetailsController: SuperViewController , UIScrollViewDelegate {
+class PhotoDetailsController: SuperViewController  {
 
     private var scrollView : UIScrollView = {
         let scroll = UIScrollView()
@@ -78,7 +78,9 @@ class PhotoDetailsController: SuperViewController , UIScrollViewDelegate {
     @objc func closeTapped(){
         coordinator?.dismiss()
     }
-    
+}
+
+extension PhotoDetailsController : UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
