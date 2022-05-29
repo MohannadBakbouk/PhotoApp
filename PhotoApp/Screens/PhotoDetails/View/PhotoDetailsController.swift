@@ -8,17 +8,21 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class PhotoDetailsController: SuperViewController  {
+class PhotoDetailsController : SuperViewController  {
+    
+    var viewModel : PhotoDetailsViewModelProtocol!
 
     private var scrollView : UIScrollView = {
         let scroll = UIScrollView()
-        scroll.backgroundColor = .red
+        scroll.backgroundColor = .white
         scroll.minimumZoomScale = 1.0
         scroll.maximumZoomScale = 8.0
+        scroll.showsVerticalScrollIndicator = false
+        scroll.showsHorizontalScrollIndicator = false
         return scroll
     }()
     
-    private var imageView : UIImageView = {
+     var imageView : UIImageView = {
          let img = UIImageView()
          img.contentMode =  .scaleAspectFill
          img.backgroundColor = .lightGray
@@ -34,7 +38,8 @@ class PhotoDetailsController: SuperViewController  {
         return button
     }()
     
-    init() {
+    init(model : PhotoDetailsViewModelProtocol) {
+        viewModel = model
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -45,8 +50,8 @@ class PhotoDetailsController: SuperViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor  = .yellow
         setupUI()
+        bindingPhotoDetailsToUI()
     }
     
     func setupUI(){
@@ -56,14 +61,14 @@ class PhotoDetailsController: SuperViewController  {
         closeButton.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
         setupUIConstraints()
     }
-    
+
     func setupUIConstraints(){
         scrollView.snp.makeConstraints { maker in
             maker.edges.equalTo(view)
         }
     
         imageView.snp.makeConstraints { maker in
-            maker.edges.equalTo(scrollView.contentLayoutGuide)
+            maker.edges.equalTo(scrollView.contentLayoutGuide).offset(0)
             maker.width.equalTo(scrollView.frameLayoutGuide.snp.width)
             maker.height.equalTo(scrollView.frameLayoutGuide.snp.height)
         }

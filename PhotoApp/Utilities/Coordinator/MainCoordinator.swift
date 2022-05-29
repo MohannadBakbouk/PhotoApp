@@ -31,7 +31,7 @@ class MainCoordinator : Coordinator {
     }
     
     func showPhotoDetails(info : PhotoViewData){
-        let photoDetails = PhotoDetailsController()
+        let photoDetails = PhotoDetailsController(model: PhotoDetailsViewModel(details: info))
         photoDetails.coordinator = self
         photoDetails.modalTransitionStyle = .crossDissolve
         photoDetails.modalPresentationStyle = .fullScreen

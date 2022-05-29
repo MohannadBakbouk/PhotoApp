@@ -20,6 +20,9 @@
 		0357314828403C21005CA337 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357314728403C21005CA337 /* Reactive.swift */; };
 		0357314C284040DF005CA337 /* IndicatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0357314B284040DF005CA337 /* IndicatorCell.swift */; };
 		036404A72842DB7C00D0B56A /* PhotoDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036404A62842DB7C00D0B56A /* PhotoDetailsController.swift */; };
+		036404A92842F6B900D0B56A /* PhotoDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036404A82842F6B900D0B56A /* PhotoDetailsProtocol.swift */; };
+		036404AB2842F7FA00D0B56A /* PhotoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036404AA2842F7FA00D0B56A /* PhotoDetailsViewModel.swift */; };
+		036404AD2842F8C700D0B56A /* PhotoDetailsController + BindingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036404AC2842F8C700D0B56A /* PhotoDetailsController + BindingModel.swift */; };
 		036925D228415D730098E949 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036925D128415D730098E949 /* CoreDataManager.swift */; };
 		036925D5284176900098E949 /* Photos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 036925D3284176900098E949 /* Photos.xcdatamodeld */; };
 		03827886283D4334008B4781 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03827885283D4334008B4781 /* PhotoService.swift */; };
@@ -84,6 +87,9 @@
 		0357314728403C21005CA337 /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
 		0357314B284040DF005CA337 /* IndicatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorCell.swift; sourceTree = "<group>"; };
 		036404A62842DB7C00D0B56A /* PhotoDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsController.swift; sourceTree = "<group>"; };
+		036404A82842F6B900D0B56A /* PhotoDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsProtocol.swift; sourceTree = "<group>"; };
+		036404AA2842F7FA00D0B56A /* PhotoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewModel.swift; sourceTree = "<group>"; };
+		036404AC2842F8C700D0B56A /* PhotoDetailsController + BindingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoDetailsController + BindingModel.swift"; sourceTree = "<group>"; };
 		036925D128415D730098E949 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		036925D4284176900098E949 /* Photos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Photos.xcdatamodel; sourceTree = "<group>"; };
 		03827885283D4334008B4781 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				036404A62842DB7C00D0B56A /* PhotoDetailsController.swift */,
+				036404AC2842F8C700D0B56A /* PhotoDetailsController + BindingModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,6 +213,8 @@
 		036404A52842DB3600D0B56A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				036404A82842F6B900D0B56A /* PhotoDetailsProtocol.swift */,
+				036404AA2842F7FA00D0B56A /* PhotoDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -697,6 +706,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03970708283C354500207A37 /* Coordinator.swift in Sources */,
+				036404AD2842F8C700D0B56A /* PhotoDetailsController + BindingModel.swift in Sources */,
 				0355749C2840164400C0512E /* Int.swift in Sources */,
 				0349E469283D7DA3007131A8 /* RequestInfo.swift in Sources */,
 				0349E474283D9711007131A8 /* PhotoListViewModelProtocol.swift in Sources */,
@@ -720,7 +730,9 @@
 				0399543528426037008C1B3C /* CoreDataManagerProtocol.swift in Sources */,
 				036925D5284176900098E949 /* Photos.xcdatamodeld in Sources */,
 				03FE77BF283EC6E10072EDDB /* UIColor.swift in Sources */,
+				036404AB2842F7FA00D0B56A /* PhotoDetailsViewModel.swift in Sources */,
 				0349E46E283D9327007131A8 /* SuperViewController.swift in Sources */,
+				036404A92842F6B900D0B56A /* PhotoDetailsProtocol.swift in Sources */,
 				0397070A283C354500207A37 /* MainCoordinator.swift in Sources */,
 				03827890283D49B2008B4781 /* Photo.swift in Sources */,
 				03827886283D4334008B4781 /* PhotoService.swift in Sources */,
