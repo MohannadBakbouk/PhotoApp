@@ -23,7 +23,7 @@ class CoreDataManager {
     }()
     
     lazy var mainContext : NSManagedObjectContext = {
-        let context = self.persistenContainer.newBackgroundContext()
+        let context = self.persistenContainer.viewContext
         context.automaticallyMergesChangesFromParent = true
         return context
     }()
@@ -97,7 +97,7 @@ extension CoreDataManager : CoreDataManagerProtocol {
         _ = try? mainContext.execute(deleteRequest)
     }
     
-    func add<T:NSManagedObject , S : AnyObject>(type : T.Type , entities : [S]){
+    func  add<T:NSManagedObject , S : AnyObject>(type : T.Type , entities : [S]){
         backgroundContext.perform {[weak self] in
             guard let self = self else {return}
             for item in entities {
