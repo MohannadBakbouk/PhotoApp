@@ -24,7 +24,7 @@ class PhotoDetailsController : SuperViewController  {
     
      var imageView : UIImageView = {
          let img = UIImageView()
-         img.contentMode =  .scaleAspectFill
+         img.contentMode =  .scaleToFill
          img.backgroundColor = .lightGray
          return img
      }()

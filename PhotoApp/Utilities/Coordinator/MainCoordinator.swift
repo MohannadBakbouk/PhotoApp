@@ -27,7 +27,7 @@ class MainCoordinator : Coordinator {
         let viewModel = PhotoListViewModel(persistent: CoreDataManager(modelName: "Photos"))
         let photos = PhotoListController(model: viewModel)
         photos.coordinator = self
-        pushViewControllerToStack(with: photos , isRoot: true)
+        pushViewControllerToStack(with: photos , animated: false , isRoot: true)
     }
     
     func showPhotoDetails(info : PhotoViewData){
